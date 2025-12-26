@@ -7,7 +7,7 @@ function App(){
   const [submitted, setSubmitted] = useState(false);
   const [error, setError] = useState(false);
 
-  function handleSubmit(e){
+  function handleSubmit(e: React.FormEvent<HTMLFormElement>){
     e.preventDefault();
     if(!name || !email || !password){
       setSubmitted(false);
