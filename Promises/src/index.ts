@@ -13,6 +13,20 @@ const fetchUser = () => {
 }
 fetchUser();
 
+const promise1 = new Promise((resolve,reject)=>{
+    const userIsLogged = true;
+    if(userIsLogged){
+        resolve("user is logged in \n");
+    }
+    else{
+        reject("user is not logged in\n");
+    }
+})
+
+promise1.then((msg)=>{
+    console.log(msg)
+})
+
 let p = new Promise((resolve,reject)=>{
     let a = 1 + 1;
     if(a == 2){
@@ -51,4 +65,5 @@ Promise.race([p1,p2,p3]) //resolves first done first resolved.
 .then((messages)=>{
     console.log(messages);
 })
+
 
