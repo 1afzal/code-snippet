@@ -7,7 +7,7 @@ async function fetchData(){
 }
 // fetchData()
 
-async function fetchDataPromise(){
+function fetchDataPromise(){
     fetch("https://pokeapi.co/api/v2/pokemon")
     .then((response)=>{
         return response.json();
