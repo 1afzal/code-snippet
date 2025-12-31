@@ -7,7 +7,7 @@ function App() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
 
-  function handleSubmit(e) {
+  function handleSubmit(e:React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     setLoading(false);
     if (!name || !password || !email) {
