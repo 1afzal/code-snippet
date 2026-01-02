@@ -1,5 +1,5 @@
 import express from "express";
-import upload from "./middleware/multer.js";
+import { upload } from "./middleware/multer.js";
 const app = express()
 
 app.post("/upload",upload.single("file"), (req,res)=>{
