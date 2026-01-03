@@ -1,0 +1,263 @@
+
+## 1. Core JavaScript (Daily Warm-ups)
+
+These should be **short, sharp, repeatable**.
+
+* `Closures`
+* `Hoisting`
+* `this-keyword`
+* `Call-Apply-Bind`
+* `Event-Loop`
+* `Async-vs-Defer`
+* `Debounce-Throttle`
+* `Shallow-vs-Deep-Copy`
+* `Prototype-Chain`
+* `Currying`
+* `Immutability`
+* `ES6-Patterns`
+
+👉 These are perfect for 5–10 min daily revisions.
+
+---
+
+## 2. Array & Object Power Moves
+
+You already have Map / Filter. Add the full squad:
+
+* `Reduce`
+* `Find-FindIndex`
+* `Some-Every`
+* `Flat-FlatMap`
+* `Sort-Custom-Comparator`
+* `Object-Destructuring`
+* `Object-Methods`
+* `Set-Map-WeakMap`
+
+---
+
+## 3. Asynchronous JavaScript
+
+This is **MERN backbone memory**.
+
+* `Callbacks`
+* `Promises`
+* `Promise-All-Race-Any`
+* `Async-Await`
+* `Error-Handling-Async`
+* `Retry-Patterns`
+* `Parallel-vs-Sequential-Execution`
+
+---
+
+## 4. Browser & Web APIs
+
+Underrated but gold for interviews.
+
+* `LocalStorage-SessionStorage`
+* `Cookies`
+* `Fetch-API`
+* `AbortController`
+* `IntersectionObserver`
+* `MutationObserver`
+* `History-API`
+* `Clipboard-API`
+
+---
+
+## 5. React Core (Must-Revise Daily)
+
+You already started well. Add depth.
+
+* `JSX-Basics`
+* `Props-vs-State`
+* `Conditional-Rendering`
+* `Lists-Keys`
+* `Forms-Controlled`
+* `Lifting-State-Up`
+* `Composition-vs-Inheritance`
+
+---
+
+## 6. React Hooks (Muscle Memory Zone)
+
+Each folder = 2–3 tiny examples.
+
+* `useState`
+* `useEffect`
+
+  * cleanup
+  * dependency traps
+* `useContext`
+* `useRef`
+* `useMemo`
+* `useCallback`
+* `custom-hooks`
+
+---
+
+## 7. React Performance & Patterns
+
+This separates juniors from pros.
+
+* `Memoization`
+* `React.memo`
+* `State-Colocation`
+* `Container-Presenter`
+* `Compound-Components`
+* `Controlled-vs-Uncontrolled`
+* `Error-Boundary`
+
+---
+
+## 8. Node.js Fundamentals
+
+Short runnable snippets only.
+
+* `Event-Emitter`
+* `Streams`
+* `File-System`
+* `Process-env`
+* `Path-Module`
+* `Cluster-Basics`
+
+---
+
+## 9. Express.js (Real-World Patterns)
+
+Very important for MERN confidence.
+
+* `Basic-Server`
+* `Routing`
+* `Middlewares`
+* `Custom-Middleware`
+* `Error-Middleware`
+* `JWT-Auth`
+* `Role-Based-Access`
+* `Rate-Limiting`
+* `CORS-Setup`
+
+---
+
+## 10. MongoDB & Mongoose
+
+Not theory. Only **patterns**.
+
+* `Schema-Design`
+* `Validation`
+* `Indexes`
+* `Populate`
+* `Aggregation`
+* `Transactions`
+* `Pagination`
+* `Soft-Delete`
+* `Mongoose-Hooks`
+
+---
+
+## 11. Authentication & Security
+
+Daily revision = safer dev instincts 🔐
+
+* `Password-Hashing`
+* `JWT-Flow`
+* `Refresh-Tokens`
+* `Auth-Middleware`
+* `XSS-CSRF-Basics`
+* `Helmet`
+* `Env-Security`
+
+---
+
+## 12. API Design & Architecture
+
+Think like a backend engineer.
+
+* `REST-Best-Practices`
+* `Status-Codes`
+* `Request-Validation`
+* `Pagination-Filtering`
+* `API-Versioning`
+* `MVC-Structure`
+
+---
+
+## 13. Frontend System Design (Mini)
+
+Perfect for interviews.
+
+* `Auth-Flow-Frontend`
+* `Protected-Routes`
+* `State-Management-Strategies`
+* `API-Integration-Pattern`
+* `Error-Handling-UI`
+
+---
+
+## 14. Testing (Light but Powerful)
+
+Just enough to stay sharp.
+
+* `Jest-Basics`
+* `Unit-Test-Functions`
+* `React-Testing-Library`
+* `Mocking-Fetch`
+
+---
+
+## 15. Dev Tools & Workflow
+
+Daily dev hygiene 🧹
+
+* `Git-Commands`
+* `Rebase-vs-Merge`
+* `Commit-Conventions`
+* `ENV-Setup`
+* `Debugging-Node`
+* `VSCode-Tricks`
+
+---
+
+## 16. Bonus: Interview Flash Snippets
+
+Tiny files. Huge impact.
+
+* `Explain-Event-Loop`
+* `Why-Virtual-DOM`
+* `State-vs-Props`
+* `SQL-vs-NoSQL`
+* `Why-MERN`
+* `Closure-Example`
+
+---
+
+### Suggested Repo Structure
+
+```txt
+code-muscle-memory/
+│
+├── javascript-core/
+├── async-js/
+├── web-apis/
+├── react-core/
+├── react-hooks/
+├── react-patterns/
+├── nodejs/
+├── express/
+├── mongodb/
+├── auth-security/
+├── api-design/
+├── testing/
+├── dev-workflow/
+└── interview-snippets/
+```
+
+---
+
+If you want, next I can:
+
+* Design a **30-day morning revision plan**
+* Create **README.md format** for each folder
+* Help you decide **what to revise daily vs weekly**
+* Convert this into a **public GitHub portfolio repo**
+
+Just say the word 🚀
