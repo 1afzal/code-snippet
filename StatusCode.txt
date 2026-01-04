@@ -174,11 +174,3 @@ app.post("/login", async (req, res) => {
 * **5xx** → Server mistake
 
 ---
-
-If you want, next we can:
-
-* Practice **status codes with Express APIs**
-* Map **status codes to real-world scenarios**
-* Or do a **mini quiz** to lock this into muscle memory 💪🧠
-
-Just say the word 🚀
