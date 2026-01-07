@@ -1,0 +1,281 @@
+Here's a comprehensive list of Redis CLI commands organized by category:
+
+Connection Commands:
+
+redis-cli                    # Connect to localhost:6379
+redis-cli -h host -p port    # Connect to specific host/port
+redis-cli -a password        # Connect with password
+redis-cli --user username -a password  # Connect with username/password
+PING                         # Test connection
+AUTH password                # Authenticate
+SELECT index                 # Switch database (0-15)
+QUIT                         # Close connection
+```
+
+## String Commands
+```bash
+SET key value                # Set key to value
+GET key                      # Get value of key
+GETSET key value            # Set new value, return old value
+MSET key1 val1 key2 val2    # Set multiple keys
+MGET key1 key2              # Get multiple keys
+SETNX key value             # Set if key doesn't exist
+SETEX key seconds value     # Set with expiration
+PSETEX key milliseconds value  # Set with expiration (ms)
+APPEND key value            # Append to string
+STRLEN key                  # Get string length
+INCR key                    # Increment by 1
+INCRBY key amount           # Increment by amount
+DECR key                    # Decrement by 1
+DECRBY key amount           # Decrement by amount
+GETRANGE key start end      # Get substring
+SETRANGE key offset value   # Overwrite part of string
+```
+
+## Key Commands
+```bash
+KEYS pattern                # Find keys matching pattern (*, ?, [])
+SCAN cursor [MATCH pattern] # Iterate keys (safer than KEYS)
+EXISTS key                  # Check if key exists
+DEL key [key ...]          # Delete key(s)
+UNLINK key [key ...]       # Async delete (non-blocking)
+TYPE key                    # Get key type
+RENAME key newkey           # Rename key
+RENAMENX key newkey         # Rename if newkey doesn't exist
+EXPIRE key seconds          # Set expiration
+EXPIREAT key timestamp      # Set expiration (Unix timestamp)
+PEXPIRE key milliseconds    # Set expiration (ms)
+TTL key                     # Get time to live (seconds)
+PTTL key                    # Get time to live (milliseconds)
+PERSIST key                 # Remove expiration
+DUMP key                    # Serialize key
+RESTORE key ttl value       # Deserialize key
+RANDOMKEY                   # Get random key
+TOUCH key [key ...]        # Update last access time
+```
+
+## List Commands
+```bash
+LPUSH key value [value ...] # Push to left (head)
+RPUSH key value [value ...] # Push to right (tail)
+LPOP key                    # Pop from left
+RPOP key                    # Pop from right
+LINDEX key index            # Get element by index
+LLEN key                    # Get list length
+LRANGE key start stop       # Get range of elements
+LSET key index value        # Set element by index
+LINSERT key BEFORE|AFTER pivot value  # Insert element
+LREM key count value        # Remove elements
+LTRIM key start stop        # Trim list to range
+BLPOP key [key ...] timeout # Blocking left pop
+BRPOP key [key ...] timeout # Blocking right pop
+RPOPLPUSH source dest       # Pop from source, push to dest
+BRPOPLPUSH source dest timeout  # Blocking version
+```
+
+## Set Commands
+```bash
+SADD key member [member ...] # Add members to set
+SREM key member [member ...] # Remove members
+SMEMBERS key                 # Get all members
+SISMEMBER key member         # Check membership
+SCARD key                    # Get set size
+SPOP key [count]            # Remove and return random member(s)
+SRANDMEMBER key [count]     # Get random member(s)
+SMOVE source dest member    # Move member between sets
+SINTER key [key ...]        # Intersection of sets
+SINTERSTORE dest key [key ...]  # Store intersection
+SUNION key [key ...]        # Union of sets
+SUNIONSTORE dest key [key ...]  # Store union
+SDIFF key [key ...]         # Difference of sets
+SDIFFSTORE dest key [key ...]   # Store difference
+SSCAN key cursor            # Iterate set members
+```
+
+## Sorted Set (ZSet) Commands
+```bash
+ZADD key score member [score member ...]  # Add members with scores
+ZREM key member [member ...]              # Remove members
+ZSCORE key member                         # Get member score
+ZINCRBY key increment member              # Increment score
+ZCARD key                                 # Get set size
+ZCOUNT key min max                        # Count members in score range
+ZRANGE key start stop [WITHSCORES]        # Get range by index
+ZREVRANGE key start stop [WITHSCORES]     # Get range (reversed)
+ZRANGEBYSCORE key min max [WITHSCORES]    # Get range by score
+ZREVRANGEBYSCORE key max min [WITHSCORES] # Get range by score (reversed)
+ZRANK key member                          # Get rank (0-based index)
+ZREVRANK key member                       # Get rank (reversed)
+ZPOPMIN key [count]                       # Remove lowest score(s)
+ZPOPMAX key [count]                       # Remove highest score(s)
+ZUNIONSTORE dest numkeys key [key ...]    # Store union
+ZINTERSTORE dest numkeys key [key ...]    # Store intersection
+ZSCAN key cursor                          # Iterate sorted set
+```
+
+## Hash Commands
+```bash
+HSET key field value [field value ...]  # Set field(s)
+HGET key field                          # Get field value
+HMSET key field value [field value ...] # Set multiple fields (deprecated, use HSET)
+HMGET key field [field ...]             # Get multiple fields
+HGETALL key                             # Get all fields and values
+HDEL key field [field ...]              # Delete field(s)
+HEXISTS key field                       # Check if field exists
+HKEYS key                               # Get all field names
+HVALS key                               # Get all values
+HLEN key                                # Get number of fields
+HINCRBY key field increment             # Increment field (integer)
+HINCRBYFLOAT key field increment        # Increment field (float)
+HSETNX key field value                  # Set if field doesn't exist
+HSCAN key cursor                        # Iterate hash fields
+```
+
+## HyperLogLog Commands
+```bash
+PFADD key element [element ...]  # Add elements
+PFCOUNT key [key ...]            # Count unique elements
+PFMERGE destkey sourcekey [sourcekey ...]  # Merge HyperLogLogs
+```
+
+## Pub/Sub Commands
+```bash
+PUBLISH channel message          # Publish message to channel
+SUBSCRIBE channel [channel ...]  # Subscribe to channel(s)
+UNSUBSCRIBE [channel ...]       # Unsubscribe from channel(s)
+PSUBSCRIBE pattern [pattern ...] # Subscribe to pattern(s)
+PUNSUBSCRIBE [pattern ...]      # Unsubscribe from pattern(s)
+PUBSUB CHANNELS [pattern]       # List active channels
+PUBSUB NUMSUB [channel ...]     # Get subscriber count
+PUBSUB NUMPAT                   # Get pattern subscriptions count
+```
+
+## Transaction Commands
+```bash
+MULTI                    # Start transaction
+EXEC                     # Execute transaction
+DISCARD                  # Cancel transaction
+WATCH key [key ...]     # Watch keys for changes
+UNWATCH                  # Unwatch all keys
+```
+
+## Script Commands (Lua)
+```bash
+EVAL script numkeys key [key ...] arg [arg ...]  # Execute Lua script
+EVALSHA sha1 numkeys key [key ...] arg [arg ...] # Execute cached script
+SCRIPT LOAD script       # Load script into cache
+SCRIPT EXISTS sha1 [sha1 ...]  # Check if scripts exist
+SCRIPT FLUSH            # Remove all scripts from cache
+SCRIPT KILL             # Kill running script
+```
+
+## Server Commands
+```bash
+INFO [section]           # Get server information
+CONFIG GET parameter     # Get configuration parameter
+CONFIG SET parameter value  # Set configuration parameter
+CONFIG REWRITE          # Rewrite config file
+DBSIZE                  # Get number of keys
+FLUSHDB                 # Delete all keys in current database
+FLUSHALL                # Delete all keys in all databases
+SAVE                    # Synchronous save to disk
+BGSAVE                  # Asynchronous save to disk
+LASTSAVE                # Get last save timestamp
+SHUTDOWN [NOSAVE|SAVE]  # Shutdown server
+CLIENT LIST             # List connected clients
+CLIENT SETNAME name     # Set client name
+CLIENT GETNAME          # Get client name
+CLIENT KILL ip:port     # Kill client connection
+MONITOR                 # Stream all commands
+SLOWLOG GET [count]     # Get slow queries log
+SLOWLOG RESET           # Reset slow log
+TIME                    # Get server time
+MEMORY USAGE key        # Get memory usage of key
+MEMORY STATS            # Get memory statistics
+```
+
+## Persistence Commands
+```bash
+BGSAVE                  # Background save
+BGREWRITEAOF           # Rewrite AOF file
+```
+
+## Replication Commands
+```bash
+SLAVEOF host port       # Make server a replica
+SLAVEOF NO ONE         # Stop replication
+ROLE                   # Get replication role
+REPLICAOF host port    # Make server a replica (new syntax)
+```
+
+## Cluster Commands
+```bash
+CLUSTER INFO            # Get cluster information
+CLUSTER NODES           # List cluster nodes
+CLUSTER SLOTS           # Get cluster slot mapping
+```
+
+## Stream Commands (Redis 5.0+)
+```bash
+XADD key ID field value [field value ...]  # Add entry to stream
+XLEN key                                   # Get stream length
+XRANGE key start end [COUNT count]         # Get range of entries
+XREAD [COUNT count] STREAMS key [key ...] ID [ID ...]  # Read from streams
+XGROUP CREATE key groupname id             # Create consumer group
+XREADGROUP GROUP group consumer [STREAMS key [key ...] ID [ID ...]]  # Read as consumer group
+XACK key group ID [ID ...]                 # Acknowledge messages
+XPENDING key group                         # Get pending messages
+XDEL key ID [ID ...]                      # Delete entries
+XTRIM key MAXLEN|MINID threshold          # Trim stream
+```
+
+## Geospatial Commands
+```bash
+GEOADD key longitude latitude member [...]  # Add geospatial items
+GEODIST key member1 member2 [unit]         # Get distance
+GEOPOS key member [member ...]             # Get coordinates
+GEORADIUS key long lat radius unit         # Query by radius
+GEORADIUSBYMEMBER key member radius unit   # Query by member radius
+GEOSEARCH key FROMMEMBER|FROMLONLAT ...    # Search (Redis 6.2+)
+```
+
+## Bitmap Commands
+```bash
+SETBIT key offset value      # Set bit
+GETBIT key offset            # Get bit
+BITCOUNT key [start end]     # Count set bits
+BITOP operation destkey key [key ...]  # Bitwise operations
+BITPOS key bit [start end]   # Find first bit set/unset
+```
+
+## Common Patterns & Examples
+```bash
+# Pattern matching
+KEYS user:*              # All keys starting with "user:"
+KEYS *name*              # All keys containing "name"
+KEYS user:???            # Keys like user:123
+
+# Expire patterns
+EXPIRE session:123 3600  # Expire in 1 hour
+TTL session:123          # Check remaining time
+
+# Atomic operations
+INCR page:views          # Increment counter
+INCRBY cart:total 50     # Add to total
+
+# Lists as queues
+LPUSH queue:jobs task1   # Add to queue
+BRPOP queue:jobs 0       # Wait for and process job
+```
+
+## Useful Redis-CLI Options
+```bash
+redis-cli --scan --pattern 'user:*'  # Scan for pattern
+redis-cli --bigkeys                   # Find big keys
+redis-cli --latency                   # Check latency
+redis-cli --stat                      # Show stats
+redis-cli --csv                       # Output in CSV format
+redis-cli --raw                       # Raw output (no quotes)
+```
+
+Want me to explain any specific command category in more detail or show practical examples?
