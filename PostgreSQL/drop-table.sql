@@ -1,0 +1,7 @@
+--DROP TABLE <table_name>
+
+DROP TABLE cars;
+
+DROP TABLE IF EXISTS cars;
+
+DROP TABLE IF EXISTS cars CASCADE;
