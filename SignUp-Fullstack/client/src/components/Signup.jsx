@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import Landing from "./Landing";
 
 function Signup() {
   const [name, setName] = useState("");
@@ -7,10 +8,12 @@ function Signup() {
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
+  const [success, setSuccess] = useState(false);
 
   async function handleSubmit(e) {
     e.preventDefault();
     setLoading(true);
+    setError(false);
 
     if (!name || !email || !password) {
       setError(true);
@@ -24,13 +27,22 @@ function Signup() {
         email,
         password,
       });
-      setError(false);
+
+      setSuccess(true);
     } catch (err) {
+      console.log(err);
       setError(true);
-      {console.log(err)}
     } finally {
       setLoading(false);
     }
+  }
+
+  if (success) {
+    return(
+        <div className="flex justify-center items-center align-center h-screen text-4xl text-green-600 font-black">
+            <Landing />
+        </div> 
+    )
   }
 
   return (
@@ -54,6 +66,7 @@ function Signup() {
         <div className="flex flex-col">
           <label className="text-sm font-medium mb-1">Email</label>
           <input
+            type="email"
             className="border rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-black"
             placeholder="test@example.com"
             value={email}
