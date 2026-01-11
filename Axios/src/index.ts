@@ -1,5 +1,6 @@
 import axios from "axios";
 
+//response.data 
 async function fetchDataAsync() {
   const response = await axios.get("https://pokeapi.co/api/v2/pokemon");
   response.data.results.map((pokemon: any) => {
