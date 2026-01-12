@@ -1,17 +1,14 @@
-let count = 0;
-function greeting1(msg){
-    console.log(msg);
+function eat(){
+    console.log("eat");
 }
 
-function greeting2(msg){
-    console.log(msg);
+function poop(){
+    console.log("poop");
 }
 
 setTimeout(()=>{
-    setInterval(()=>{
-        count++;
-        console.log(count);
-    },1000)
-    greeting1("Hey")
-},5000)
-clearTimeout()
+    eat();
+        setTimeout(()=>{
+            poop();
+        },1000)
+},1000)
