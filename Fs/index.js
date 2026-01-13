@@ -58,3 +58,17 @@ async function WriteMultiple(){
 //WriteFilesSync()
 // AppendFile();
 // WriteMultiple()
+
+
+async function readFileAsync2(){
+  const response = await fs.readFile("demo.txt", "utf-8");
+  console.log(response);
+}
+
+
+function readFileSync2(){
+  const response = fss.readFileSync("demo.txt","utf-8")
+  console.log(response)
+
+}
+readFileSync2()
