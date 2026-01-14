@@ -6,4 +6,13 @@
 > git config --global user.email "example@gmail.com"
 > git init 
 > git diff 
-> test
+> git add <filename / filepath>
+> git add .
+> git rm <filename / filepath>
+> git log
+> git log --oneline 
+> git show [SHA]
+> git blame <filename/ filepath>
+> git status
+> git reset --hard 
+> testing git reset 
