@@ -5,4 +5,5 @@
 > git config --global user.name "John Doe"
 > git config --global user.email "example@gmail.com"
 > git init 
->
+> git diff 
+> test
