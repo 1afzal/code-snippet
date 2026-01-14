@@ -8,6 +8,7 @@
 > git diff 
 > git add <filename / filepath>
 > git add .
+> git commit -a -m "message"
 > git rm <filename / filepath>
 > git log
 > git log --oneline 
@@ -26,4 +27,6 @@
 > git push --set-upstream origin <branch-name>
 > git merge origin/<branch-name>
 > git pull 
+> git stash 
+> git stash apply 
 > 
