@@ -1,0 +1,8 @@
+// git is an version controlling system.
+
+> git 
+> git -v 
+> git config --global user.name "John Doe"
+> git config --global user.email "example@gmail.com"
+> git init 
+>

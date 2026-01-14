@@ -4,3 +4,7 @@ function filterByAge(age){
 }
 const res = people.filter(filterByAge);
 console.log(res)
+
+function validateAge(age){
+    return age>=18;
+}
