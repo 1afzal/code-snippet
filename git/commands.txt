@@ -15,4 +15,15 @@
 > git blame <filename/ filepath>
 > git status
 > git reset --hard 
-> testing git reset 
+> git revert [SHA]
+> git pull
+> git remote add origin <repo-url>
+> git remote -v
+> git push -u origin main
+> git branch <branch-name>
+> git checkout -b <branch-name>
+> git checkout <branch-name>
+> git push --set-upstream origin <branch-name>
+> git merge origin/<branch-name>
+> git pull 
+> 
