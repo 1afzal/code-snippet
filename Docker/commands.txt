@@ -1,0 +1,90 @@
+docker --version -> docker version.
+docker info -> Gives system-level info.
+
+docker pull <image_name>
+    >> docker pull nginx
+    >> docker pull redis
+
+docker images -> lists out all images you have 
+
+docker rmi <image_name>
+    >> docker rmi nginx 
+    >> docker rmi redis 
+
+docker run <image_name> -> runs a container.
+    >>docker run redis
+    >>docker run express
+
+docker run -d <image_name> -> runs a container in detached mode
+    >>docker run -d redis
+    >>docker run -d express
+
+//port maping 
+docker run -d -p <local_port>:<image_port>
+    >>docker run -d -p 8080:3000 myapp   //node.js app
+    >>docker run -d -p 6969:8080 nginx   //nginx
+
+//naming a container 
+docker run --name myRedis redis
+
+//listting docker containers
+docker ps 
+docker ps -a //all containers including stopped
+
+//stopping a container 
+docker stop <conatiner_name>
+    docker stop myRedis
+    dockef stop myapp
+
+//start a stopped container 
+docker start <container_name>
+    >>docker start myRedis
+
+//Restart a container
+docker restart <container_name>
+    >>docker restart Redit
+    >>docker restart nginx
+
+//remove/delete a container
+docker rm <container_name>
+    >>docker rm myRedis
+    >>docker rm nginx
+    >>docker rm -f nginx //force delete
+
+//logs and inspection
+    >>docker logs myRedis
+    >>docker logs redis
+    >>docker logs -f nginx 
+
+//Excecuting commands inside a container 
+docker exec -it <container_name> bash | zsh | 
+
+docker run -it node
+
+//Delete/ remove all stopped containers
+docker container prune
+
+//Delete/ remove all unused images.
+docker image prune 
+
+//Delete everything unused
+docker system prune
+
+//List volumes
+docker volume ls
+
+//create volume
+docker volume create myData
+
+//run container with volume
+docker run -d -v mydata:/data nginx
+
+//List all networks
+docker network ls
+
+//create network
+docker network create myNetwork
+
+//Run container on a networkd
+docker run -d --network mynetwork --name app nginx
+
