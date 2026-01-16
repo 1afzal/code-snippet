@@ -57,7 +57,7 @@ docker rm <container_name>
     >>docker logs -f nginx 
 
 //Excecuting commands inside a container 
-docker exec -it <container_name> bash | zsh | 
+docker exec -it <container_name> bash 
 
 docker run -it node
 
