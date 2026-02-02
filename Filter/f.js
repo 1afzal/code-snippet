@@ -1,10 +1,10 @@
-const people = [22,18,2,34,90,21];
-function filterByAge(age){
-    return age >= 18
-}
-const res = people.filter(filterByAge);
-console.log(res)
 
-function validateAge(age){
+const st_age = [14,23,54,11,26,17,19,18,20];
+
+function filterByAge(age){
     return age>=18;
 }
+
+
+const res = st_age.filter(filterByAge);
+console.log(res);
