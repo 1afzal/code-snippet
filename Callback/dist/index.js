@@ -10,10 +10,9 @@ function enterHouse(callback) {
     console.log("Entered the house\n");
     callback();
 }
-function leaveHouse(callback) {
+function leaveHouse() {
     console.log("Left the house\n");
-    callback();
 }
-enterHouse(leaveHouse(first));
+enterHouse(leaveHouse);
 export {};
 //# sourceMappingURL=index.js.map
