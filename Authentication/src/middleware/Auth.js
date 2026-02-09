@@ -5,7 +5,7 @@ function AuthMiddleware(req,res,next){
     const authHeader = req.headers.authorization; //Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...
 
 
-    if (!authHeader || authHeader.startsWith("Bearer ")) {
+    if (!authHeader || !authHeader.startsWith("Bearer ")) {
         return res.status(400).json({
             error: "Token not found!"
         });
