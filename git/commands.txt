@@ -8,7 +8,7 @@
 > git diff 
 > git add <filename / filepath>
 > git add .
-> git commit -a -m "message"
+> git commit -a -m "message"   (both adding and commiting at the same time)
 > git rm <filename / filepath>
 > git log
 > git log --oneline 
@@ -29,4 +29,4 @@
 > git pull 
 > git stash 
 > git stash apply 
-> 
+> test revert
